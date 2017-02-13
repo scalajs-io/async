@@ -1,12 +1,16 @@
 Async API for Scala.js
 ================================
-This is a Scala.js type-safe binding for [Async](https://www.npmjs.com/package/async)
+[Async](https://www.npmjs.com/package/async) - Higher-order functions and common patterns for asynchronous code.
 
-Higher-order functions and common patterns for asynchronous code.
+#### Description
+
+Async is a utility module which provides straight-forward, powerful functions for working with asynchronous JavaScript. 
+Although originally designed for use with Node.js and installable via `npm install --save async`, it can also be used 
+directly in the browser.
 
 #### Build Dependencies
 
-* [ScalaJs.io v0.3.x](https://github.com/ldaniels528/scalajs.io)
+* [ScalaJs.io v0.3.x](https://github.com/scalajs-io/scalajs.io)
 * [SBT v0.13.13](http://www.scala-sbt.org/download.html)
 
 #### Build/publish the SDK locally
@@ -69,7 +73,7 @@ class Task(val name: String) extends js.Object
 To add the Moment binding to your project, add the following to your build.sbt:  
 
 ```sbt
-libraryDependencies += "io.scalajs.npm" %%% "async" % "0.3.0.3"
+libraryDependencies += "io.scalajs.npm" %%% "async" % "2.1.4"
 ```
 
 Optionally, you may add the Sonatype Repository resolver:
