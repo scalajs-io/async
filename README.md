@@ -1,25 +1,25 @@
 Async API for Scala.js
 ================================
-[Async](https://www.npmjs.com/package/async) - Higher-order functions and common patterns for asynchronous code.
+[async](https://www.npmjs.com/package/async) - Higher-order functions and common patterns for asynchronous code.
 
-#### Description
+### Description
 
 Async is a utility module which provides straight-forward, powerful functions for working with asynchronous JavaScript. 
 Although originally designed for use with Node.js and installable via `npm install --save async`, it can also be used 
 directly in the browser.
 
-#### Build Dependencies
+### Build Dependencies
 
 * [ScalaJs.io v0.3.x](https://github.com/scalajs-io/scalajs.io)
 * [SBT v0.13.13](http://www.scala-sbt.org/download.html)
 
-#### Build/publish the SDK locally
+### Build/publish the SDK locally
 
 ```bash
  $ sbt clean publish-local
 ```
 
-#### Running the tests
+### Running the tests
 
 Before running the tests the first time, you must ensure the npm packages are installed:
 
@@ -33,7 +33,7 @@ Then you can run the tests:
 $ sbt test
 ```
 
-#### Examples
+### Examples
 
 Using `Async` asynchronously via callbacks
 
@@ -68,9 +68,9 @@ q.unshift(new Task(name = "bar"), (err: Error) => println("finished processing b
 class Task(val name: String) extends js.Object
 ```
 
-#### Artifacts and Resolvers
+### Artifacts and Resolvers
 
-To add the Moment binding to your project, add the following to your build.sbt:  
+To add the `Async` binding to your project, add the following to your build.sbt:  
 
 ```sbt
 libraryDependencies += "io.scalajs.npm" %%% "async" % "2.1.4"
