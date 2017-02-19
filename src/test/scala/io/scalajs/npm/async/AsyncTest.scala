@@ -4,7 +4,7 @@ import io.scalajs.JSON
 import io.scalajs.nodejs.fs.Fs
 import io.scalajs.nodejs.{Error, console}
 import io.scalajs.npm.async.AsyncTest._
-import io.scalajs.util.ScalaJsHelper._
+import io.scalajs.util.PromiseHelper._
 import org.scalatest.FunSpec
 
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue

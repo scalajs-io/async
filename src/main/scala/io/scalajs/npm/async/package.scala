@@ -1,7 +1,7 @@
 package io.scalajs.npm
 
 import io.scalajs.nodejs.Error
-import io.scalajs.util.ScalaJsHelper.{futureCallbackE0, futureCallbackE1}
+import io.scalajs.util.PromiseHelper._
 
 import scala.concurrent.Promise
 import scala.scalajs.js
@@ -38,7 +38,7 @@ package object async {
       */
     @inline
     def eachFuture[A <: js.Any](coll: js.Array[A])(iteratee: (A, AsyncErrorCallback) => Any): Promise[A] = {
-      futureCallbackE1[Error, A](async.each(coll, _))
+      promiseWithError1[Error, A](async.each(coll, _))
     }
 
     /**
@@ -58,7 +58,7 @@ package object async {
     @inline
     def eachLimitFuture[A <: js.Any](coll: js.Array[A], limit: Int)(
         iteratee: (A, AsyncErrorCallback) => Any): Promise[A] = {
-      futureCallbackE1[Error, A](async.eachLimit(coll, limit, _))
+      promiseWithError1[Error, A](async.eachLimit(coll, limit, _))
     }
 
     /**
@@ -76,7 +76,7 @@ package object async {
       */
     @inline
     def eachSeriesFuture[A <: js.Any](coll: js.Array[A])(iteratee: (A, AsyncErrorCallback) => Any): Promise[A] = {
-      futureCallbackE1[Error, A](async.eachSeries(coll, _))
+      promiseWithError1[Error, A](async.eachSeries(coll, _))
     }
 
     /**
@@ -89,7 +89,7 @@ package object async {
       */
     @inline
     def filterFuture[A <: js.Any](coll: js.Array[A])(iteratee: (A, AsyncErrorCallback) => Boolean): Promise[Array[A]] = {
-      futureCallbackE1[Error, js.Array[A]](async.filter(coll, _))
+      promiseWithError1[Error, js.Array[A]](async.filter(coll, _))
     }
 
     /**
@@ -102,7 +102,7 @@ package object async {
       */
     @inline
     def forEachOfFuture[A](coll: js.Array[A])(iteratee: (A, Int, AsyncErrorCallback) => Any): Promise[Unit] = {
-      futureCallbackE0[Error](async.forEachOf(coll, iteratee, _))
+      promiseWithError0[Error](async.forEachOf(coll, iteratee, _))
     }
 
     /**
@@ -114,7 +114,7 @@ package object async {
       */
     @inline
     def forEachOfFuture[A](coll: js.Dictionary[A])(iteratee: (A, String, AsyncErrorCallback) => Any): Promise[Unit] = {
-      futureCallbackE0[Error](async.forEachOf(coll, iteratee, _))
+      promiseWithError0[Error](async.forEachOf(coll, iteratee, _))
     }
 
     /**
@@ -126,7 +126,7 @@ package object async {
       */
     @inline
     def parallelFuture[A <: js.Any](tasks: js.Array[js.Function]): Promise[A] = {
-      futureCallbackE1[Error, A](async.parallel(tasks, _))
+      promiseWithError1[Error, A](async.parallel(tasks, _))
     }
 
     /**
@@ -138,7 +138,7 @@ package object async {
       */
     @inline
     def rejectFuture[A <: js.Any](coll: js.Array[A])(iteratee: (A, Int) => Any): Promise[A] = {
-      futureCallbackE1[Error, A](async.reject(coll, iteratee, _))
+      promiseWithError1[Error, A](async.reject(coll, iteratee, _))
     }
 
     /**
@@ -150,7 +150,7 @@ package object async {
       */
     @inline
     def rejectFuture[A <: js.Any](coll: js.Dictionary[A])(iteratee: (A, String) => Any): Promise[A] = {
-      futureCallbackE1[Error, A](async.reject(coll, iteratee, _))
+      promiseWithError1[Error, A](async.reject(coll, iteratee, _))
     }
 
     /**
@@ -163,7 +163,7 @@ package object async {
       */
     @inline
     def waterfallFuture[A](tasks: js.Array[_ <: js.Function]): Promise[A] = {
-      futureCallbackE1[Error, A](async.waterfall(tasks, _))
+      promiseWithError1[Error, A](async.waterfall(tasks, _))
     }
 
   }
