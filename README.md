@@ -72,7 +72,7 @@ class Task(val name: String) extends js.Object
 To add the `Async` binding to your project, add the following to your build.sbt:  
 
 ```sbt
-libraryDependencies += "io.scalajs.npm" %%% "async" % "2.1.4-2"
+libraryDependencies += "io.scalajs.npm" %%% "async" % "2.1.4-3"
 ```
 
 Optionally, you may add the Sonatype Repository resolver:
