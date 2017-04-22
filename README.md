@@ -10,7 +10,7 @@ directly in the browser.
 
 ### Build Dependencies
 
-* [SBT v0.13.13](http://www.scala-sbt.org/download.html)
+* [SBT v0.13.15](http://www.scala-sbt.org/download.html)
 
 ### Build/publish the SDK locally
 
@@ -72,7 +72,7 @@ class Task(val name: String) extends js.Object
 To add the `Async` binding to your project, add the following to your build.sbt:  
 
 ```sbt
-libraryDependencies += "io.scalajs.npm" %%% "async" % "0.4.0-pre4"
+libraryDependencies += "io.scalajs.npm" %%% "async" % "0.4.0-pre5"
 ```
 
 Optionally, you may add the Sonatype Repository resolver:
