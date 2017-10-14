@@ -39,7 +39,7 @@ Using `Async` asynchronously via callbacks
 ```scala
 import io.scalajs.npm.async.Async
 import scala.scalajs.js
-import scala.scalajs.js.annotation.ScalaJSDefined
+
 
 // create a queue object with concurrency 2
 val q = Async.queue[Task]((task: Task, callback: js.Function0[Any]) => {
@@ -63,7 +63,7 @@ q.push(js.Array(new Task(name = "baz"), new Task(name = "bay"), new Task(name = 
 // add some items to the front of the queue
 q.unshift(new Task(name = "bar"), (err: Error) => println("finished processing bar"))
 
-@ScalaJSDefined
+
 class Task(val name: String) extends js.Object
 ```
 
@@ -72,7 +72,7 @@ class Task(val name: String) extends js.Object
 To add the `Async` binding to your project, add the following to your build.sbt:  
 
 ```sbt
-libraryDependencies += "io.scalajs.npm" %%% "async" % "0.4.1"
+libraryDependencies += "io.scalajs.npm" %%% "async" % "0.4.2"
 ```
 
 Optionally, you may add the Sonatype Repository resolver:

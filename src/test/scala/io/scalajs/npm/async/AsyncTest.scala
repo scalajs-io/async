@@ -9,7 +9,7 @@ import org.scalatest.FunSpec
 
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 import scala.scalajs.js
-import scala.scalajs.js.annotation.ScalaJSDefined
+
 import scala.util.{Failure, Success, Try}
 
 /**
@@ -189,7 +189,7 @@ class AsyncTest extends FunSpec {
   */
 object AsyncTest {
 
-  @ScalaJSDefined
+
   class Task(val name: String) extends js.Object
 
 }
