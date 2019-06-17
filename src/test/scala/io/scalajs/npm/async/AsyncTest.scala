@@ -15,6 +15,7 @@ import scala.util.{Failure, Success, Try}
 /**
   * Async module tests
   * @author lawrence.daniels@gmail.com
+  * @see [[https://github.com/caolan/async/blob/v1.5.2/README.md]]
   */
 class AsyncTest extends FunSpec {
 
@@ -30,9 +31,9 @@ class AsyncTest extends FunSpec {
       }, 2)
 
       // assign a callback
-      q.drain = () => {
-        println("all items have been processed")
-      }
+      //q.drain = () => {
+      // println("all items have been processed")
+      //}
 
       // add some items to the queue
       q.push(new Task(name = "foo"), (err: Error) => {
@@ -188,7 +189,6 @@ class AsyncTest extends FunSpec {
   * @author lawrence.daniels@gmail.com
   */
 object AsyncTest {
-
 
   class Task(val name: String) extends js.Object
 
